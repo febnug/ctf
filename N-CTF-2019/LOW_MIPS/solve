@@ -1,1 +1,16 @@
+27BDFFF8 2020000A 20210002 AFA10000 20410004 AFA20004 27BD0008
 
+Hasil disassemble :
+
+addiu, sp, sp, -8
+addi zero, at, 10
+addi, at, at, 2
+sw at, 0(sp)
+addi at, v0, 4
+sw v0, 4(sp)
+addiu sp, sp, 8
+
+Cuma penjumlahan aja si kayanya, diliat ada instruksi "addi"
+berarti 10 + 2 + 4 = 16
+
+flag : KorNewbie{16}
