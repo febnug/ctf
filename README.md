@@ -1,2 +1,1 @@
-# ctf
-Iseng aja mumpung masih nganggur
+<p>ctf write-up</p>
